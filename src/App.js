@@ -5,7 +5,7 @@ import { getWeather } from './utils';
 import { useState } from 'react';
 
 function App() {
-  const [city, setCity] = useState('La Plata');
+  const [city, setCity] = useState('');
   const [data, setData] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -32,7 +32,6 @@ function App() {
   // handler que se encargara de manejar el evento onClick
   // en el boton actualizar del componente Card
   const handleReload = async () => {
-    setLoading(true);
     getAndDisplayWeatherData(city);
   }
 
