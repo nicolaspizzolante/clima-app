@@ -3,6 +3,7 @@ import Card from './components/card/Card';
 import CitySelector from './components/city-selector/CitySelector';
 import { getWeather } from './utils';
 import { useState } from 'react';
+import loadingImg from './assets/loading.gif';
 
 function App() {
   const [city, setCity] = useState('');
@@ -40,8 +41,8 @@ function App() {
       <div className="Main">
         <h1>Clima App</h1>
         <CitySelector handleChange={handleChange} />
-        {loading && <p className='loading-p'>Cargando...</p>}
-        {data && <Card data={data} handleReload={handleReload} />}
+        {loading && <img src={loadingImg} alt="cargando..."></img>}
+        {data && !loading && <Card data={data} handleReload={handleReload} />}
       </div>
     </div>
   );

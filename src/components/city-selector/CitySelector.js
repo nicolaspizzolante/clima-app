@@ -5,7 +5,7 @@ function CitySelector(props) {
     return (
         <div className="City-selector">
             <select onChange={props.handleChange}>
-                <option value="">Seleciona una ciudad</option>
+                <option selected disabled value="">Seleciona una ciudad</option>
                 {cities.map((city, idx) => {
                     return <option key={idx} value={city}>{city}</option>
                 })}
